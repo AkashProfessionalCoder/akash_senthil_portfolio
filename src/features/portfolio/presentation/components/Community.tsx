@@ -1,38 +1,45 @@
 import React from 'react'
-import { Users, Presentation, Calendar, Award, Compass, MessageSquare } from 'lucide-react'
+import { Users, Presentation, Calendar, Compass } from 'lucide-react'
 import { FadeIn } from '@shared/components/animations/FadeIn'
+import { GlassCard } from '@shared/components/cards/GlassCard'
 import type { CommunityActivity } from '../../domain/entities/portfolioEntities'
+import nammaFlutterLogo from '../../../../assets/nammaflutter_logo.png'
+import { appConfig } from '@app/config/appConfig'
 
 interface CommunityProps {
   data: CommunityActivity;
 }
 
 export const Community: React.FC<CommunityProps> = ({ data }) => {
-  // Stylized mock slides for events
-  const mockGalleries = [
+  const communityImages = Object.values(
+    import.meta.glob('/src/assets/community/*.{png,jpg,jpeg,JPG,JPEG,PNG}', { eager: true, import: 'default' })
+  ) as string[]
+
+  const row1Images = communityImages.slice(0, Math.ceil(communityImages.length / 2))
+  const row2Images = communityImages.slice(Math.ceil(communityImages.length / 2))
+
+  // The 3-card event design with custom tags, icons, descriptions
+  const communityCards = [
     {
-      title: 'DevFest Stage Talk',
-      tag: 'PUBLIC SPEAKER',
-      color: 'from-blue-600/20 to-sky-950/40 border-blue-500/20',
-      icon: <Presentation className="text-accent-blue" size={24} />,
-      desc: 'Mobile Architectures & CI/CD automation session',
-      date: 'March 2026',
-    },
-    {
-      title: 'Namma Flutter Meetup',
+      title: 'Help Organize Events',
       tag: 'ORGANIZER',
-      color: 'from-purple-600/20 to-indigo-950/40 border-purple-500/20',
-      icon: <Users className="text-accent-purple" size={24} />,
-      desc: 'Google-recognized Flutter community developers session',
-      date: 'April 2026',
+      glowColor: 'blue' as const,
+      icon: <Users className="text-accent-blue" size={24} />,
+      desc: 'Organized and managed 18+ Flutter meetups, workshops, and developer hackathons.',
     },
     {
-      title: 'Performance Workshop',
-      tag: 'INSTRUCTOR',
-      color: 'from-emerald-600/20 to-teal-950/40 border-emerald-500/20',
-      icon: <Award className="text-accent-emerald" size={24} />,
-      desc: 'Profiling memory and reducing rebuild cycles hands-on',
-      date: 'June 2026',
+      title: 'Host Events',
+      tag: 'HOST',
+      glowColor: 'purple' as const,
+      icon: <Calendar className="text-accent-purple" size={24} />,
+      desc: 'Welcomed attendees, validated speakers, and managed the flow of developer meetups.',
+    },
+    {
+      title: 'Conduct Sessions in the Event',
+      tag: 'SPEAKER',
+      glowColor: 'emerald' as const,
+      icon: <Presentation className="text-accent-emerald" size={24} />,
+      desc: 'Delivered technical presentations and hands-on workshops covering mobile architectures.',
     },
   ]
 
@@ -56,78 +63,129 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
         </div>
 
         {/* Info Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left Block: Description & Activities */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Block: Description */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6 text-left">
             <FadeIn direction="right" className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-accent-blue">
-                  <Compass size={24} />
-                </div>
+                <a 
+                  href={appConfig.links.nammaFlutter} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-1 rounded-xl bg-white/5 border border-white/10 overflow-hidden flex items-center justify-center w-12 h-12 hover:border-accent-blue/50 hover:bg-white/10 transition-all duration-300 flex-shrink-0"
+                >
+                  <img src={nammaFlutterLogo} alt="Namma Flutter Logo" className="w-full h-full object-contain" />
+                </a>
                 <div>
                   <h4 className="text-xl font-bold font-display text-white tracking-tight">{data.title}</h4>
                   <p className="text-xs text-accent-blue font-mono mt-0.5">{data.role}</p>
+                  <p className="text-[10px] text-slate-500 font-mono mt-0.5">2025 – 2026 | Chennai, India</p>
                 </div>
               </div>
 
               <p className="text-sm text-text-dim leading-relaxed">
-                {data.description} I participate in ecosystem initiatives and help organize conferences, code jams, and local networking events.
+                {data.description}
               </p>
-            </FadeIn>
 
-            {/* Bullet activities */}
-            <FadeIn direction="right" delay={0.1} className="space-y-3 pt-4 border-t border-border-subtle/40">
-              <span className="text-[11px] font-mono text-slate-400 font-bold uppercase tracking-wider block">
-                Community Initiatives:
-              </span>
-              <div className="space-y-2">
-                {data.activities.map((act, idx) => (
-                  <div key={idx} className="flex items-start space-x-2 text-xs text-slate-300">
-                    <MessageSquare size={14} className="text-accent-blue mt-0.5 flex-shrink-0" />
-                    <span>{act}</span>
-                  </div>
-                ))}
+              <div className="pt-2">
+                <a
+                  href={appConfig.links.nammaFlutter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-1.5 text-xs text-accent-blue font-mono hover:text-white transition-colors duration-200"
+                >
+                  <span>launch_url: {appConfig.links.nammaFlutter}</span>
+                  <span className="text-xs">↗</span>
+                </a>
               </div>
             </FadeIn>
           </div>
 
-          {/* Right Block: Event Slide Previews */}
+          {/* Right Block: 3 Event Cards */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {mockGalleries.map((gallery, idx) => (
-              <FadeIn key={gallery.title} direction="up" delay={idx * 0.1}>
-                <div className={`h-full rounded-xl border bg-gradient-to-br ${gallery.color} p-5 flex flex-col justify-between text-left shadow-lg`}>
+            {communityCards.map((card, idx) => (
+              <FadeIn key={card.title} direction="up" delay={idx * 0.1} className="h-full">
+                <GlassCard
+                  glowColor={card.glowColor}
+                  spotlight={true}
+                  className="p-5 flex flex-col justify-between text-left h-full min-h-[200px]"
+                >
                   <div className="space-y-4">
                     {/* Header */}
                     <div className="flex justify-between items-start">
                       <div className="p-2 rounded-lg bg-white/5 border border-white/10">
-                        {gallery.icon}
+                        {card.icon}
                       </div>
-                      <span className="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300">
-                        {gallery.tag}
+                      <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded border border-white/10 bg-white/5 text-slate-300">
+                        {card.tag}
                       </span>
                     </div>
 
-                    {/* Meta details */}
+                    {/* Content */}
                     <div className="space-y-1">
                       <h5 className="font-display font-bold text-sm text-white leading-tight">
-                        {gallery.title}
+                        {card.title}
                       </h5>
-                      <p className="text-[11px] text-text-dim leading-normal">
-                        {gallery.desc}
+                      <p className="text-xs text-text-dim leading-relaxed">
+                        {card.desc}
                       </p>
                     </div>
                   </div>
-
-                  {/* Footer */}
-                  <div className="flex items-center space-x-1 text-[9px] font-mono text-slate-500 mt-6 pt-2 border-t border-white/5">
-                    <Calendar size={10} />
-                    <span>{gallery.date}</span>
-                  </div>
-                </div>
+ 
+                </GlassCard>
               </FadeIn>
             ))}
           </div>
         </div>
+
+        {/* Community Images Ticker */}
+        {communityImages.length > 0 && (
+          <FadeIn direction="up" delay={0.2} className="w-full mt-16 space-y-6 hover-pause select-none">
+            <div className="text-left border-b border-border-subtle/50 pb-2">
+              <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block">
+                // COMMUNITY MEMORIES & SNAPSHOTS
+              </span>
+            </div>
+
+            <div className="relative w-full overflow-hidden py-1">
+              {/* Left and right gradient blur overlays */}
+              <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-bg-primary via-bg-primary/50 to-transparent z-20 pointer-events-none" />
+              <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-bg-primary via-bg-primary/50 to-transparent z-20 pointer-events-none" />
+
+              {/* Row 1: Left to Right (animate-scroll-right) */}
+              <div className="flex w-full overflow-hidden">
+                <div className="flex space-x-4 animate-scroll-right py-2">
+                  {[...row1Images, ...row1Images].map((src, i) => (
+                    <div key={`row1-${i}`} className="w-64 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-border-subtle bg-bg-secondary shadow-lg">
+                      <img
+                        src={src}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        alt={`Community event snapshot ${i}`}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Row 2: Right to Left (animate-scroll-left) */}
+              <div className="flex w-full overflow-hidden mt-4">
+                <div className="flex space-x-4 animate-scroll-left py-2">
+                  {[...row2Images, ...row2Images].map((src, i) => (
+                    <div key={`row2-${i}`} className="w-64 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-border-subtle bg-bg-secondary shadow-lg">
+                      <img
+                        src={src}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        alt={`Community meetup snapshot ${i}`}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        )}
 
       </div>
     </section>

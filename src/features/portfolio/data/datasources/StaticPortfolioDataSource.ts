@@ -263,13 +263,13 @@ export class StaticPortfolioDataSource implements PortfolioDataSource {
       community: {
         id: 'comm-1',
         title: 'Namma Flutter Community',
-        role: 'Core Team Member',
-        description: 'Part of Namma Flutter, a Google-recognized developer community focused on spreading Flutter knowledge.',
+        role: 'Core Team Member — Namma Flutter',
+        description: 'Core Team Member @ Namma Flutter. Helping scale Chennai’s Flutter developer ecosystem through community engineering, meetups, workshops, and open-source collaboration.',
         activities: [
-          'Public Speaking and technical presentations on mobile architectures.',
-          'Organizing Flutter sessions, workshops, and hackathons.',
-          'Mentoring newcomers and building a supportive ecosystem.',
-          'Sharing knowledge via public repositories and community channels.',
+          'Help Organize Events',
+          'Validate Speakers',
+          'Be a Speaker for Sessions',
+          'Conducted Sessions (5+ Topics)',
         ],
       },
     }

@@ -123,3 +123,32 @@
 .radial-fade {
   mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
 }
+
+/* Ticker scroll animations */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-left {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 55s linear infinite;
+}
+
+.animate-scroll-right {
+  display: flex;
+  width: max-content;
+  animation: scroll-right 55s linear infinite;
+}
+
+/* Pause animation on hover */
+.hover-pause:hover .animate-scroll-left,
+.hover-pause:hover .animate-scroll-right {
+  animation-play-state: paused;
+}

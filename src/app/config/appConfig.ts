@@ -16,5 +16,8 @@ export const appConfig = {
     // get a free access key from https://web3forms.com/ and paste it below:
     web3FormsKey: 'e0cbd8e4-b973-4165-8803-3331f775919c',
   },
+  links: {
+    nammaFlutter: 'https://nammaflutter.com/team  ',
+  },
   resumeUrl: '/assets/Akash_Senthil_Resume.pdf', // local public assets folder path
 }

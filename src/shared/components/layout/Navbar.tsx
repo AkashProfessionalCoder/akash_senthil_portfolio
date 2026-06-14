@@ -39,7 +39,7 @@ export const Navbar: React.FC = () => {
       <header className="sticky top-0 w-full z-40 glass-panel border-b border-border-subtle/50 px-6 py-4 flex justify-between items-center transition-all duration-300">
         {/* Logo */}
         <a href="#hero" onClick={(e) => handleScroll(e, '#hero')} className="flex items-center space-x-2 font-display font-bold text-2xl text-gradient-blue-purple tracking-tight">
-          <span>Akash.</span>
+          <span>AkashSenthil.dev</span>
         </a>
 
         {/* Desktop Navigation */}
