@@ -11,5 +11,10 @@ export const appConfig = {
     medium: 'https://medium.com/@akashprocoder',
     email: 'mailto:akashprocoder@gmail.com', // standard contact template
   },
+  contactForm: {
+    // To receive contact form messages directly in your email inbox, 
+    // get a free access key from https://web3forms.com/ and paste it below:
+    web3FormsKey: 'e0cbd8e4-b973-4165-8803-3331f775919c',
+  },
   resumeUrl: '/assets/Akash_Senthil_Resume.pdf', // local public assets folder path
 }

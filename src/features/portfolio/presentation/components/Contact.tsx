@@ -17,19 +17,62 @@ export const Contact: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const triggerMailtoFallback = () => {
+    const emailAddress = appConfig.social.email.replace('mailto:', '')
+    const subject = encodeURIComponent(`Message from ${formData.name} (Portfolio)`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )
+    window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`
+    setIsSubmitted(true)
+    setFormData({ name: '', email: '', message: '' })
+    setTimeout(() => setIsSubmitted(false), 4000)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!formData.name || !formData.email || !formData.message) return
 
     setIsSending(true)
-    // Simulate sending network request
-    setTimeout(() => {
+    const web3Key = appConfig.contactForm?.web3FormsKey
+
+    if (web3Key) {
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: web3Key,
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            subject: `New Portfolio Message from ${formData.name}`,
+          }),
+        })
+
+        const result = await response.json()
+        if (result.success) {
+          setIsSubmitted(true)
+          setFormData({ name: '', email: '', message: '' })
+          setTimeout(() => setIsSubmitted(false), 4000)
+        } else {
+          alert('Submission error: ' + (result.message || 'Verification failed.'))
+        }
+      } catch (err) {
+        console.error('Web3Forms submit error:', err)
+        alert('Network transmission failed. Launching local email client...')
+        triggerMailtoFallback()
+      } finally {
+        setIsSending(false)
+      }
+    } else {
+      // Fallback to mailto link
+      triggerMailtoFallback()
       setIsSending(false)
-      setIsSubmitted(true)
-      setFormData({ name: '', email: '', message: '' })
-      // Clear message after 4s
-      setTimeout(() => setIsSubmitted(false), 4000)
-    }, 1500)
+    }
   }
 
   return (
