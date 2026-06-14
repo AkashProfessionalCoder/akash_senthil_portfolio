@@ -24,9 +24,11 @@ export interface JourneyItem {
   year: string;
   title: string;
   company: string;
-  role: string;
-  workDone: string[];
+   workDone: string[];
   tags: string[];
+  location?: string;
+  companyUrl?: string;
+  logoUrl?: string;
 }
 
 export interface SkillCategory {
