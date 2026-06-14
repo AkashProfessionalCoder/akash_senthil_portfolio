@@ -1,5 +1,5 @@
 import React from 'react'
-import { Users, Presentation, Calendar, Compass } from 'lucide-react'
+import { Users, Presentation, Calendar } from 'lucide-react'
 import { FadeIn } from '@shared/components/animations/FadeIn'
 import { GlassCard } from '@shared/components/cards/GlassCard'
 import type { CommunityActivity } from '../../domain/entities/portfolioEntities'

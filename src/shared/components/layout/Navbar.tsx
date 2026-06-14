@@ -10,8 +10,8 @@ export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
-    { label: 'Work', href: '#work', id: 'work' },
     { label: 'Engineering', href: '#engineering', id: 'engineering' },
+    { label: 'Experience', href: '#experience', id: 'experience' },
     { label: 'Writing', href: '#writing', id: 'writing' },
     { label: 'Community', href: '#community', id: 'community' },
   ]

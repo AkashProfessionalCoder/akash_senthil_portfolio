@@ -39,7 +39,7 @@ interface JourneyProps {
 
 export const Journey: React.FC<JourneyProps> = ({ journey }) => {
   return (
-    <section className="py-20 border-t border-border-subtle/35">
+    <section id="experience" className="py-20 border-t border-border-subtle/35">
       <div className="max-w-4xl mx-auto space-y-16">
 
         {/* Section Header */}

@@ -2,12 +2,8 @@ import React from 'react'
 import { usePortfolio } from '../hooks/usePortfolio'
 import { Hero } from '../components/Hero'
 import { Impact } from '../components/Impact'
-import { Products } from '../components/Products'
-import { CaseStudy } from '../components/CaseStudy'
 import { Journey } from '../components/Journey'
-import { HowIBuild } from '../components/HowIBuild'
 import { Toolbox } from '../components/Toolbox'
-import { OpenSource } from '../components/OpenSource'
 import { Notes } from '../components/Notes'
 import { Community } from '../components/Community'
 import { Contact } from '../components/Contact'
@@ -17,7 +13,7 @@ export const PortfolioPage: React.FC = () => {
   const { data, isLoading, error } = usePortfolio()
 
   // Track the active section for the navbar scroll indicator
-  useActiveSection(['hero', 'work', 'engineering', 'writing', 'community', 'contact'])
+  useActiveSection(['hero', 'engineering', 'experience', 'writing', 'community', 'contact'])
 
   if (isLoading) {
     return (
@@ -47,12 +43,8 @@ export const PortfolioPage: React.FC = () => {
       {/* Sections rendering sequentially */}
       <Hero data={data.hero} />
       <Impact stats={data.impactStats} />
-      <Products projects={data.projects} />
-      <CaseStudy data={data.caseStudy} />
       <Journey journey={data.journey} />
-      <HowIBuild />
       <Toolbox skills={data.skills} />
-      <OpenSource data={data.openSource} />
       <Notes notes={data.notes} />
       <Community data={data.community} />
       <Contact />
