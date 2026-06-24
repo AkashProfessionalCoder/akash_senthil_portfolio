@@ -19,5 +19,5 @@ export const appConfig = {
   links: {
     nammaFlutter: 'https://nammaflutter.com/team  ',
   },
-  resumeUrl: '/assets/Akash_Senthil_Resume.pdf', // local public assets folder path
+  resumeUrl: '/assets/AkashSenthil_Resume.pdf', // local public assets folder path
 }
