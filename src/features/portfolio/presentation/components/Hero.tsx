@@ -200,7 +200,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
             >
               Explore My Work
             </Button>
-            <a href={appConfig.resumeUrl} download>
+            <a href={appConfig.resumeUrl} download data-cursor-label="resume">
               <Button
                 variant="secondary"
                 size="lg"

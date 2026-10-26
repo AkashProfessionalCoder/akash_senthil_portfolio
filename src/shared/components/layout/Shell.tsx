@@ -5,6 +5,8 @@ import { Code2 } from 'lucide-react'
 import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 import { TerminalModal } from '@shared/components/common/TerminalModal'
+import { SiteCursor } from '@shared/components/common/SiteCursor'
+import { GridInteraction } from '@shared/components/common/GridInteraction'
 import { useUIStore } from '@app/store/uiStore'
 
 export const Shell: React.FC = () => {
@@ -15,6 +17,9 @@ export const Shell: React.FC = () => {
     <div className="min-h-screen bg-bg-primary text-slate-100 flex flex-col relative grid-bg overflow-x-hidden">
       {/* Radial fade to soften the grid background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-primary/50 to-bg-primary pointer-events-none radial-fade z-0" />
+
+      {/* Grid that warps and glows around the pointer */}
+      <GridInteraction />
       
       {/* Header Navigation */}
       <Navbar />
@@ -40,6 +45,7 @@ export const Shell: React.FC = () => {
             className="fixed bottom-6 right-6 z-40 p-4 rounded-full border border-accent-blue/30 bg-bg-card text-accent-blue shadow-2xl backdrop-blur-md cursor-pointer hover:border-accent-blue/60 transition-all flex items-center justify-center"
             title="Open developer terminal"
             id="floating-terminal-trigger"
+            data-cursor-label="terminal"
           >
             <Code2 size={20} className="animate-pulse" />
             <span className="ml-1.5 font-mono text-xs font-bold hidden sm:inline">{'> _'}</span>
@@ -49,6 +55,9 @@ export const Shell: React.FC = () => {
 
       {/* Terminal Overlay Modal */}
       <TerminalModal />
+
+      {/* Custom cursor with smear trail and hover labels */}
+      <SiteCursor />
     </div>
   )
 }

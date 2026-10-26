@@ -108,7 +108,7 @@ export const Notes: React.FC<NotesProps> = ({ notes }) => {
           </div>
 
           <FadeIn direction="left">
-            <a href={appConfig.social.medium} target="_blank" rel="noopener noreferrer">
+            <a href={appConfig.social.medium} target="_blank" rel="noopener noreferrer" data-cursor-label="open">
               <Button
                 variant="outline"
                 icon={<BookOpen size={16} />}
@@ -126,6 +126,7 @@ export const Notes: React.FC<NotesProps> = ({ notes }) => {
             <FadeIn key={note.id} direction="up" delay={idx * 0.08}>
               <a
                 href={note.link}
+                data-cursor-label="read"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block group h-full"
