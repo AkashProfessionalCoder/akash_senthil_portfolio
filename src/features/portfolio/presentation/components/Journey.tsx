@@ -80,6 +80,7 @@ export const Journey: React.FC<JourneyProps> = ({ journey }) => {
                   {item.companyUrl ? (
                     <a
                       href={item.companyUrl}
+                      data-cursor-label="open"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block group cursor-pointer h-full"

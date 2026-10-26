@@ -132,6 +132,7 @@ export const Contact: React.FC = () => {
                   <div className="grid grid-cols-2 gap-3 text-xs font-mono">
                     <a
                       href={appConfig.social.linkedin}
+                      data-cursor-label="open"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-border-subtle bg-white/5 text-text-dim hover:text-white hover:border-white/10 transition-all"
@@ -141,6 +142,7 @@ export const Contact: React.FC = () => {
                     </a>
                     <a
                       href={appConfig.social.github}
+                      data-cursor-label="open"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-border-subtle bg-white/5 text-text-dim hover:text-white hover:border-white/10 transition-all"
@@ -150,6 +152,7 @@ export const Contact: React.FC = () => {
                     </a>
                     <a
                       href={appConfig.social.medium}
+                      data-cursor-label="open"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-border-subtle bg-white/5 text-text-dim hover:text-white hover:border-white/10 transition-all"
@@ -159,6 +162,7 @@ export const Contact: React.FC = () => {
                     </a>
                     <a
                       href={appConfig.social.email}
+                      data-cursor-label="email"
                       className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-border-subtle bg-white/5 text-text-dim hover:text-white hover:border-white/10 transition-all"
                     >
                       <Mail size={14} className="text-accent-emerald" />

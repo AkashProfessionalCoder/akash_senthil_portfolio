@@ -69,7 +69,8 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
             <FadeIn direction="right" className="space-y-4">
               <div className="flex items-center space-x-3">
                 <a 
-                  href={appConfig.links.nammaFlutter} 
+                  href={appConfig.links.nammaFlutter}
+                  data-cursor-label="open" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-1 rounded-xl bg-white/5 border border-white/10 overflow-hidden flex items-center justify-center w-12 h-12 hover:border-accent-blue/50 hover:bg-white/10 transition-all duration-300 flex-shrink-0"
@@ -90,6 +91,7 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
               <div className="pt-2">
                 <a
                   href={appConfig.links.nammaFlutter}
+                  data-cursor-label="open"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-1.5 text-xs text-accent-blue font-mono hover:text-white transition-colors duration-200"
