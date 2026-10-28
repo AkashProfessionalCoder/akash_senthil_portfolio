@@ -4,7 +4,7 @@ import { ArrowRight, Download } from 'lucide-react'
 import { Button } from '@shared/components/buttons/Button'
 import { appConfig } from '@app/config/appConfig'
 import type { PortfolioData } from '../../domain/entities/portfolioEntities'
-import profileImg from '../../../../assets/akash_profile.jpg'
+import profileImg from '../../../../assets/akash_profile.webp'
 
 interface HeroProps {
   data: PortfolioData['hero'];
@@ -260,6 +260,10 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
               <img
                 src={profileImg}
                 alt="Akash Senthil"
+                width={800}
+                height={473}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500"
               />
             </motion.div>

@@ -3,7 +3,7 @@ import { Users, Presentation, Calendar } from 'lucide-react'
 import { FadeIn } from '@shared/components/animations/FadeIn'
 import { GlassCard } from '@shared/components/cards/GlassCard'
 import type { CommunityActivity } from '../../domain/entities/portfolioEntities'
-import nammaFlutterLogo from '../../../../assets/nammaflutter_logo.png'
+import nammaFlutterLogo from '../../../../assets/nammaflutter_logo.webp'
 import { appConfig } from '@app/config/appConfig'
 
 interface CommunityProps {
@@ -12,7 +12,7 @@ interface CommunityProps {
 
 export const Community: React.FC<CommunityProps> = ({ data }) => {
   const communityImages = Object.values(
-    import.meta.glob('/src/assets/community/*.{png,jpg,jpeg,JPG,JPEG,PNG}', { eager: true, import: 'default' })
+    import.meta.glob('/src/assets/community/*.webp', { eager: true, import: 'default' })
   ) as string[]
 
   const row1Images = communityImages.slice(0, Math.ceil(communityImages.length / 2))
@@ -75,7 +75,7 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
                   rel="noopener noreferrer"
                   className="p-1 rounded-xl bg-white/5 border border-white/10 overflow-hidden flex items-center justify-center w-12 h-12 hover:border-accent-blue/50 hover:bg-white/10 transition-all duration-300 flex-shrink-0"
                 >
-                  <img src={nammaFlutterLogo} alt="Namma Flutter Logo" className="w-full h-full object-contain" />
+                  <img src={nammaFlutterLogo} alt="Namma Flutter Logo" width={198} height={256} loading="lazy" decoding="async" className="w-full h-full object-contain" />
                 </a>
                 <div>
                   <h4 className="text-xl font-bold font-display text-white tracking-tight">{data.title}</h4>
@@ -161,7 +161,10 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
                     <div key={`row1-${i}`} className="w-64 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-border-subtle bg-bg-secondary shadow-lg">
                       <img
                         src={src}
+                        width={256}
+                        height={160}
                         loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                         alt={`Community event snapshot ${i}`}
                       />
@@ -177,7 +180,10 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
                     <div key={`row2-${i}`} className="w-64 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-border-subtle bg-bg-secondary shadow-lg">
                       <img
                         src={src}
+                        width={256}
+                        height={160}
                         loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                         alt={`Community meetup snapshot ${i}`}
                       />
