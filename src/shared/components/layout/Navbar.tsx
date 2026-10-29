@@ -92,6 +92,7 @@ export const Navbar: React.FC = () => {
         <div className="md:hidden flex items-center space-x-3">
           <button
             onClick={toggleTerminal}
+            aria-label="Open terminal"
             className="flex items-center p-2 text-accent-blue border border-accent-blue/30 rounded bg-accent-blue/5"
           >
             <Code size={16} />

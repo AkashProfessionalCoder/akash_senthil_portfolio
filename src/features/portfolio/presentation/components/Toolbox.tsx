@@ -40,12 +40,12 @@ export const Toolbox: React.FC<ToolboxProps> = ({ skills }) => {
         {/* Section Header */}
         <div className="text-left max-w-2xl">
           <FadeIn direction="up">
-            <h2 className="text-xs font-mono font-bold tracking-widest text-accent-blue uppercase">
+            <p className="text-xs font-mono font-bold tracking-widest text-accent-blue uppercase">
               // TECHNICAL CAPABILITIES
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
               Engineering Toolbox
-            </h3>
+            </h2>
             <p className="text-text-dim mt-4">
               Categorized technologies, languages, architectures, and automated setups that I utilize to design, build, and scale digital products.
             </p>
@@ -66,9 +66,9 @@ export const Toolbox: React.FC<ToolboxProps> = ({ skills }) => {
                     <div className="p-1.5 rounded-lg bg-white/5 border border-white/10">
                       {getIcon(category.categoryName)}
                     </div>
-                    <h4 className="font-display font-bold text-sm text-white leading-tight">
+                    <h3 className="font-display font-bold text-sm text-white leading-tight">
                       {category.categoryName}
-                    </h4>
+                    </h3>
                   </div>
 
                   {/* Skills List */}
