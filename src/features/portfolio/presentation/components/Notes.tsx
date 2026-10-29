@@ -5,7 +5,7 @@ import { Button } from '@shared/components/buttons/Button'
 import { FadeIn } from '@shared/components/animations/FadeIn'
 import { appConfig } from '@app/config/appConfig'
 import type { NoteItem } from '../../domain/entities/portfolioEntities'
-import redMentorImg from '../../../../assets/red_mentor.png'
+import redMentorImg from '../../../../assets/red_mentor.webp'
 
 
 const getCachedPreview = (url: string): string | null => {
@@ -75,8 +75,11 @@ const MediumPreviewImage: React.FC<{ url: string; title: string; staticImageUrl?
       <img
         src={displayUrl}
         alt={title}
+        width={800}
+        height={450}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
         loading="lazy"
+        decoding="async"
       />
     </div>
   )

@@ -21,6 +21,10 @@ const CompanyLogo: React.FC<{ company: string; logoUrl?: string }> = ({ company,
         <img
           src={logoUrl}
           alt={`${company} logo`}
+          width={48}
+          height={48}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-contain p-1.5 bg-white/5"
           onError={() => setHasError(true)}
         />
