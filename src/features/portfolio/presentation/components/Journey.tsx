@@ -49,12 +49,12 @@ export const Journey: React.FC<JourneyProps> = ({ journey }) => {
         {/* Section Header */}
         <div className="text-center max-w-xl mx-auto">
           <FadeIn direction="up">
-            <h2 className="text-xs font-mono font-bold tracking-widest text-accent-blue uppercase">
+            <p className="text-xs font-mono font-bold tracking-widest text-accent-blue uppercase">
               // CAREER PROGRESSION
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
               Engineering Journey
-            </h3>
+            </h2>
             <p className="text-text-dim mt-4">
               A chronology of shipping applications, leading system architecture, and contributing back to the community.
             </p>
@@ -106,10 +106,10 @@ export const Journey: React.FC<JourneyProps> = ({ journey }) => {
                                   <span>{item.year}</span>
                                 </div>
 
-                                <h4 className={`text-lg font-bold font-display text-white tracking-tight flex items-center transition-colors duration-200 ${hoverText}`}>
+                                <h3 className={`text-lg font-bold font-display text-white tracking-tight flex items-center transition-colors duration-200 ${hoverText}`}>
                                   <Briefcase size={16} className="text-text-dim mr-2 flex-shrink-0" />
                                   <span>{item.title}</span>
-                                </h4>
+                                </h3>
 
                                 <p className="text-sm text-text-dim font-mono">{item.company}</p>
 
@@ -165,10 +165,10 @@ export const Journey: React.FC<JourneyProps> = ({ journey }) => {
                                 <span>{item.year}</span>
                               </div>
 
-                              <h4 className="text-lg font-bold font-display text-white tracking-tight flex items-center">
+                              <h3 className="text-lg font-bold font-display text-white tracking-tight flex items-center">
                                 <Briefcase size={16} className="text-text-dim mr-2 flex-shrink-0" />
                                 <span>{item.title}</span>
-                              </h4>
+                              </h3>
 
                               <p className="text-sm text-text-dim font-mono">{item.company}</p>
 

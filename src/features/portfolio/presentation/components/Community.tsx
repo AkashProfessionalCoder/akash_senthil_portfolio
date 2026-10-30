@@ -50,12 +50,12 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
         {/* Section Header */}
         <div className="text-left max-w-2xl">
           <FadeIn direction="up">
-            <h2 className="text-xs font-mono font-bold tracking-widest text-accent-blue uppercase">
+            <p className="text-xs font-mono font-bold tracking-widest text-accent-blue uppercase">
               // ENGAGING ECOSYSTEM
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
               Beyond Code 💙
-            </h3>
+            </h2>
             <p className="text-text-dim mt-4">
               I actively invest in communities, sharing knowledge, and building engineering circles. Core organizer at Namma Flutter.
             </p>
@@ -78,7 +78,7 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
                   <img src={nammaFlutterLogo} alt="Namma Flutter Logo" width={198} height={256} loading="lazy" decoding="async" className="w-full h-full object-contain" />
                 </a>
                 <div>
-                  <h4 className="text-xl font-bold font-display text-white tracking-tight">{data.title}</h4>
+                  <h3 className="text-xl font-bold font-display text-white tracking-tight">{data.title}</h3>
                   <p className="text-xs text-accent-blue font-mono mt-0.5">{data.role}</p>
                   <p className="text-[10px] text-slate-500 font-mono mt-0.5">2025 – 2026 | Chennai, India</p>
                 </div>
@@ -125,9 +125,9 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
 
                     {/* Content */}
                     <div className="space-y-1">
-                      <h5 className="font-display font-bold text-sm text-white leading-tight">
+                      <h3 className="font-display font-bold text-sm text-white leading-tight">
                         {card.title}
-                      </h5>
+                      </h3>
                       <p className="text-xs text-text-dim leading-relaxed">
                         {card.desc}
                       </p>
@@ -158,7 +158,7 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
               <div className="flex w-full overflow-hidden">
                 <div className="flex space-x-4 animate-scroll-right py-2">
                   {[...row1Images, ...row1Images].map((src, i) => (
-                    <div key={`row1-${i}`} className="w-64 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-border-subtle bg-bg-secondary shadow-lg">
+                    <div key={`row1-${i}`} aria-hidden={i >= row1Images.length || undefined} className="w-64 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-border-subtle bg-bg-secondary shadow-lg">
                       <img
                         src={src}
                         width={256}
@@ -166,7 +166,7 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
                         loading="lazy"
                         decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        alt={`Community event snapshot ${i}`}
+                        alt={i < row1Images.length ? `Namma Flutter community event photo ${i + 1}` : ''}
                       />
                     </div>
                   ))}
@@ -177,7 +177,7 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
               <div className="flex w-full overflow-hidden mt-4">
                 <div className="flex space-x-4 animate-scroll-left py-2">
                   {[...row2Images, ...row2Images].map((src, i) => (
-                    <div key={`row2-${i}`} className="w-64 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-border-subtle bg-bg-secondary shadow-lg">
+                    <div key={`row2-${i}`} aria-hidden={i >= row2Images.length || undefined} className="w-64 h-40 flex-shrink-0 rounded-xl overflow-hidden border border-border-subtle bg-bg-secondary shadow-lg">
                       <img
                         src={src}
                         width={256}
@@ -185,7 +185,7 @@ export const Community: React.FC<CommunityProps> = ({ data }) => {
                         loading="lazy"
                         decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        alt={`Community meetup snapshot ${i}`}
+                        alt={i < row2Images.length ? `Namma Flutter community meetup photo ${row1Images.length + i + 1}` : ''}
                       />
                     </div>
                   ))}

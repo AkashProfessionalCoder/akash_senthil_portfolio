@@ -82,12 +82,12 @@ export const Contact: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-xl mx-auto">
           <FadeIn direction="up">
-            <h2 className="text-xs font-mono font-bold tracking-widest text-accent-blue uppercase">
+            <p className="text-xs font-mono font-bold tracking-widest text-accent-blue uppercase">
               // CONNECT
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
               Let's build something impactful 🚀
-            </h3>
+            </h2>
             <p className="text-text-dim mt-4">
               Looking for a product-oriented mobile engineer to lead app architecture, automate your deployments, or speak at your developer event? Reach out!
             </p>
@@ -103,7 +103,7 @@ export const Contact: React.FC = () => {
               <GlassCard glowColor="blue" className="h-full p-8 flex flex-col justify-between">
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-2xl font-bold font-display text-white tracking-tight">Akash Senthil</h4>
+                    <h3 className="text-2xl font-bold font-display text-white tracking-tight">Akash Senthil</h3>
                     <p className="text-sm text-accent-blue font-mono mt-0.5">Mobile Engineer</p>
                   </div>
 
