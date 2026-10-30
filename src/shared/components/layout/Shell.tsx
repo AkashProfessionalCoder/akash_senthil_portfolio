@@ -15,8 +15,12 @@ export const Shell: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-bg-primary text-slate-100 flex flex-col relative grid-bg overflow-x-hidden">
-      {/* Radial fade to soften the grid background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg-primary/50 to-bg-primary pointer-events-none radial-fade z-0" />
+      {/* Radial fade to soften the grid background. Fixed to the viewport (like
+          GridInteraction below) so its radius is based on screen size, not the
+          full scrollable page height - anchoring it to the page made the mask
+          nearly opaque everywhere except a band near the page's vertical
+          midpoint, which showed up as large areas of solid black. */}
+      <div className="fixed inset-0 bg-gradient-to-b from-transparent via-bg-primary/50 to-bg-primary pointer-events-none radial-fade z-0" />
 
       {/* Grid that warps and glows around the pointer */}
       <GridInteraction />
