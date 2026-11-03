@@ -1,7 +1,7 @@
 # Akash Senthil Portfolio
 
 <div align="center">
-  <img src="./src/assets/akash_profile.jpg" alt="Akash Senthil" width="150" height="150" style="border-radius: 50%; object-fit: cover;" />
+  <img src="./src/assets/akash_profile.webp" alt="Akash Senthil" width="150" height="150" style="border-radius: 50%; object-fit: cover;" />
   
   A modern, fully-featured portfolio website built with React, TypeScript, and Vite. Showcasing professional work, journey, and expertise with smooth animations and a responsive design.
 

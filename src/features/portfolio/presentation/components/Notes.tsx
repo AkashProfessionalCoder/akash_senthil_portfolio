@@ -5,7 +5,7 @@ import { Button } from '@shared/components/buttons/Button'
 import { FadeIn } from '@shared/components/animations/FadeIn'
 import { appConfig } from '@app/config/appConfig'
 import type { NoteItem } from '../../domain/entities/portfolioEntities'
-import redMentorImg from '../../../../assets/red_mentor.png'
+import redMentorImg from '../../../../assets/red_mentor.webp'
 
 
 const getCachedPreview = (url: string): string | null => {
@@ -75,8 +75,11 @@ const MediumPreviewImage: React.FC<{ url: string; title: string; staticImageUrl?
       <img
         src={displayUrl}
         alt={title}
+        width={800}
+        height={450}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
         loading="lazy"
+        decoding="async"
       />
     </div>
   )
@@ -95,12 +98,12 @@ export const Notes: React.FC<NotesProps> = ({ notes }) => {
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-6">
           <div className="text-left max-w-2xl">
             <FadeIn direction="up">
-              <h2 className="text-xs font-mono font-bold tracking-widest text-accent-purple uppercase">
+              <p className="text-xs font-mono font-bold tracking-widest text-accent-purple uppercase">
                 // TECHNICAL KNOWLEDGE
-              </h2>
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
                 Engineering Notes
-              </h3>
+              </h2>
               <p className="text-text-dim mt-4">
                 Writing what I learn while building. Documenting mobile architectures, performance metrics, and build processes.
               </p>
@@ -154,10 +157,10 @@ export const Notes: React.FC<NotesProps> = ({ notes }) => {
 
                     {/* Article Details */}
                     <div className="space-y-2">
-                      <h4 className="text-lg font-bold font-display text-white tracking-tight group-hover:text-accent-purple transition-colors flex items-center justify-between">
+                      <h3 className="text-lg font-bold font-display text-white tracking-tight group-hover:text-accent-purple transition-colors flex items-center justify-between">
                         <span>{note.title}</span>
                         <ArrowUpRight size={16} className="text-slate-600 group-hover:text-accent-purple transition-colors flex-shrink-0 ml-2" />
-                      </h4>
+                      </h3>
                       <p className="text-sm text-text-dim leading-relaxed">
                         {note.subtitle}
                       </p>
