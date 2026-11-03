@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
           <path d="M14.314 0L2.3 12l3.87 3.87 15.83-15.87h-7.686zm-4.144 16.143l-3.87-3.87L2.3 16.143l12.014 12.014h7.686l-11.83-12.014z" fill="#40C4FF" />
         </svg>
       ),
-      position: 'top-0 left-4 sm:left-10',
+      position: 'top-0 left-6 sm:left-10',
       floatClass: 'animate-float-1',
     },
     {
@@ -48,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
           <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#00B4AB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
-      position: 'top-0 right-4 sm:right-10',
+      position: 'top-0 right-6 sm:right-10',
       floatClass: 'animate-float-2',
     },
     {
@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
           <path d="M19 15h-3v-3h-2v3h-3v2h3v3h2v-3h3v-2z" fill="#34A853" />
         </svg>
       ),
-      position: 'top-1/4 -right-8 sm:-right-14',
+      position: 'top-1/4 right-1 sm:-right-14',
       floatClass: 'animate-float-3',
     },
     {
@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
           <path d="M16.63 3.22L18 1.83a.5.5 0 0 0-.71-.71l-1.46 1.46A9.95 9.95 0 0 0 12 2c-1.37 0-2.68.28-3.83.78L6.71 1.32a.5.5 0 0 0-.71.71l1.39 1.39A10.02 10.02 0 0 0 2 13h20a10.02 10.02 0 0 0-5.37-9.78zM7 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM2 14.5v3.5a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-3.5H2z" fill="#3DDC84" />
         </svg>
       ),
-      position: 'bottom-12 -right-8 sm:-right-14',
+      position: 'bottom-10 right-1 sm:bottom-12 sm:-right-14',
       floatClass: 'animate-float-1',
     },
     {
@@ -108,7 +108,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
           <line x1="12" y1="22.08" x2="12" y2="12" />
         </svg>
       ),
-      position: 'bottom-12 -left-8 sm:-left-14',
+      position: 'bottom-10 left-1 sm:bottom-12 sm:-left-14',
       floatClass: 'animate-float-1',
     },
     {
@@ -123,7 +123,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
           <path d="M20 12a4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4h4a4 4 0 0 1 4 4z" fill="#1ABCFE" />
         </svg>
       ),
-      position: 'top-1/4 -left-8 sm:-left-14',
+      position: 'top-1/4 left-1 sm:-left-14',
       floatClass: 'animate-float-2',
     }
   ]
@@ -230,11 +230,11 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
         <div className="lg:col-span-5 flex justify-center items-center py-12 lg:py-0 relative">
           <div className="absolute inset-0 bg-radial-gradient from-accent-blue/5 to-transparent pointer-events-none rounded-full w-80 h-80 mx-auto blur-2xl" />
           
-          <div className="relative w-[280px] sm:w-[320px] h-[320px] flex items-center justify-center">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center">
             
             {/* Ambient pulsing light behind the avatar */}
             <motion.div
-              className="absolute w-56 h-56 rounded-full bg-gradient-to-tr from-accent-blue to-accent-purple opacity-30 blur-2xl"
+              className="absolute w-44 h-44 sm:w-56 sm:h-56 rounded-full bg-gradient-to-tr from-accent-blue to-accent-purple opacity-30 blur-2xl"
               animate={{
                 scale: [1, 1.1, 1],
                 opacity: [0.2, 0.35, 0.2],
@@ -247,12 +247,12 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
             />
 
             {/* Rotating dashed borders */}
-            <div className="absolute w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] rounded-full border border-dashed border-accent-blue/30 animate-[spin_40s_linear_infinite]" />
-            <div className="absolute w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] rounded-full border border-dashed border-accent-purple/15 animate-[spin_60s_linear_infinite_reverse]" />
+            <div className="absolute w-[210px] h-[210px] sm:w-[280px] sm:h-[280px] rounded-full border border-dashed border-accent-blue/30 animate-[spin_40s_linear_infinite]" />
+            <div className="absolute w-[230px] h-[230px] sm:w-[300px] sm:h-[300px] rounded-full border border-dashed border-accent-purple/15 animate-[spin_60s_linear_infinite_reverse]" />
 
             {/* Main Profile Container */}
             <motion.div
-              className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2 bg-bg-card/75 border border-white/10 shadow-2xl backdrop-blur-md overflow-hidden z-10 group"
+              className="relative w-44 h-44 sm:w-64 sm:h-64 rounded-full p-1.5 sm:p-2 bg-bg-card/75 border border-white/10 shadow-2xl backdrop-blur-md overflow-hidden z-10 group"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -281,7 +281,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
                 }}
               >
                 <div
-                  className={`flex items-center justify-center w-12 h-12 rounded-full border border-border-subtle bg-bg-card/95 backdrop-blur-md shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-default select-none ${tag.color} ${tag.floatClass}`}
+                  className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 [&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-5 sm:[&>svg]:h-5 rounded-full border border-border-subtle bg-bg-card/95 backdrop-blur-md shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-default select-none ${tag.color} ${tag.floatClass}`}
                   title={tag.name}
                 >
                   {tag.logo}
