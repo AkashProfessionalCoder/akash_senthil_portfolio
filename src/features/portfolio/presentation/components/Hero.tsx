@@ -145,7 +145,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
   }
 
   return (
-    <section id="hero" className="relative py-12 md:py-24 overflow-hidden min-h-[calc(100vh-80px)] flex items-center">
+    <section id="hero" className="relative py-12 md:py-24 min-h-[calc(100vh-80px)] flex items-center">
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full bg-accent-blue/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[350px] h-[350px] rounded-full bg-accent-purple/10 blur-[120px] pointer-events-none" />
