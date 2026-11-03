@@ -39,7 +39,7 @@ export const PortfolioPage: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto px-6 py-6 space-y-4 relative">
+    <div className="container mx-auto px-4 sm:px-6 py-6 space-y-4 relative">
       {/* Sections rendering sequentially */}
       <Hero data={data.hero} />
       <Impact stats={data.impactStats} />
