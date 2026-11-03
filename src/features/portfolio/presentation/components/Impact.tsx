@@ -42,12 +42,12 @@ export const Impact: React.FC<ImpactProps> = ({ stats }) => {
         {/* Section Header */}
         <div className="text-left max-w-2xl">
           <FadeIn direction="up">
-            <h2 className="text-xs font-mono font-bold tracking-widest text-accent-blue uppercase">
+            <p className="text-xs font-mono font-bold tracking-widest text-accent-blue uppercase">
               // ENGINEERING METRICS
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-display">
               Quantifiable Impact & Ownership
-            </h3>
+            </h2>
             <p className="text-text-dim mt-4">
               Building apps isn't just about writing code; it's about owning the lifecycle, ensuring scalability, and delivering business value.
             </p>
@@ -75,9 +75,9 @@ export const Impact: React.FC<ImpactProps> = ({ stats }) => {
 
                   {/* Title & Description */}
                   <div className="space-y-1">
-                    <h4 className="font-display font-bold text-lg text-white">
+                    <h3 className="font-display font-bold text-lg text-white">
                       {stat.label}
-                    </h4>
+                    </h3>
                     <p className="text-sm text-text-dim leading-relaxed">
                       {stat.subtitle}
                     </p>
