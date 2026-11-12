@@ -1,7 +1,7 @@
 export const appConfig = {
   metadata: {
-    title: 'Akash Senthil | Mobile Engineer',
-    description: 'Mobile Engineer specializing in production-grade mobile applications, architecture, CI/CD, performance, and engineering ecosystems.',
+    title: 'Akash Senthil | Software Engineer & Flutter Developer',
+    description: 'Software Engineer and Flutter Developer specializing in Clean Architecture, production mobile applications, CI/CD automation, and scalable systems.',
     siteUrl: 'https://akashsenthil.tech',
     author: 'Akash Senthil',
   },
