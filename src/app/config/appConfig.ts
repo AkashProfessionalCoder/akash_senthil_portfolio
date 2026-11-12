@@ -2,7 +2,7 @@ export const appConfig = {
   metadata: {
     title: 'Akash Senthil | Mobile Engineer',
     description: 'Mobile Engineer specializing in production-grade mobile applications, architecture, CI/CD, performance, and engineering ecosystems.',
-    siteUrl: 'https://akashsenthil.dev',
+    siteUrl: 'https://www.akashsenthil.tech',
     author: 'Akash Senthil',
   },
   social: {
