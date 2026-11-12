@@ -1,0 +1,13 @@
+{
+  "name": "Akash Senthil | Mobile Engineer",
+  "short_name": "Akash Senthil",
+  "description": "Personal engineering portfolio of Akash Senthil, Mobile Engineer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#050508",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
