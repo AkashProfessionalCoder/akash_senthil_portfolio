@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useSyncExternalStore } from 'react'
+
+const noopSubscribe = () => () => {}
 import { createPortal } from 'react-dom'
 
 const CANVAS_SIZE = 360
@@ -60,7 +62,20 @@ export const SiteCursor: React.FC = () => {
   const labelRef = useRef<HTMLSpanElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
+  // The cursor is purely a client-side effect (it portals into document.body,
+  // which doesn't exist during prerendering) and renders nothing until this
+  // is true. useSyncExternalStore (rather than an immediate environment
+  // check like `typeof document === 'undefined'`, or a useEffect flipping
+  // state) is the pattern React itself recommends for this: it returns the
+  // "server" snapshot (false) during the client's first render too, so that
+  // render still matches the prerendered page exactly (both render null);
+  // only once hydration has committed does it resync to the real (true)
+  // snapshot and the portal appears, so there's nothing for React to
+  // reconcile a mismatch against.
+  const mounted = useSyncExternalStore(noopSubscribe, () => true, () => false)
+
   useEffect(() => {
+    if (!mounted) return
     const root = rootRef.current
     const label = labelRef.current
     const canvas = canvasRef.current
@@ -297,7 +312,11 @@ export const SiteCursor: React.FC = () => {
       window.removeEventListener('resize', refresh)
       window.removeEventListener('blur', reset)
     }
-  }, [])
+  }, [mounted])
+
+  if (!mounted) {
+    return null
+  }
 
   return createPortal(
     <div className="site-cursor" ref={rootRef} aria-hidden="true">

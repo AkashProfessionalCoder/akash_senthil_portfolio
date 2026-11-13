@@ -259,7 +259,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
             >
               <img
                 src={profileImg}
-                alt="Akash Senthil"
+                alt="Akash Senthil - Software Engineer & Flutter Developer"
                 width={800}
                 height={473}
                 fetchPriority="high"
