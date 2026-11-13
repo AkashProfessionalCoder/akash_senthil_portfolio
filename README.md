@@ -5,7 +5,7 @@
   
   A modern, fully-featured portfolio website built with React, TypeScript, and Vite. Showcasing professional work, journey, and expertise with smooth animations and a responsive design.
 
-  **[🚀 View Live Portfolio](https://akash-senthil-portfolio.vercel.app/)**
+  **[🚀 View Live Portfolio](https://akashsenthil.tech/)**
 </div>
 
 ## ✨ Features
