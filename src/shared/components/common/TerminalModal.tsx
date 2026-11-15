@@ -83,8 +83,9 @@ export const TerminalModal: React.FC = () => {
       case 'experience':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="font-bold text-white">3.5+ Years Mobile Engineering Experience</p>
-            <p>• Lead Mobile Developer at Samaaro (2024 - Present)</p>
+            <p className="font-bold text-white">3.8+ Years Mobile Engineering Experience</p>
+            <p>• Software Engineer at 9x Technology L.L.C (2026 - Present)</p>
+            <p>• Product Engineer at Samaaro (2024 - 2026)</p>
             <p>• Mobile Engineer at WHY Global Services (2022 - 2024)</p>
             <p>• Specialized in Flutter, Dart, Native integrations, and automation scripting.</p>
           </div>
@@ -93,7 +94,7 @@ export const TerminalModal: React.FC = () => {
       case 'shipped':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="font-bold text-white">7+ Production Apps Shipped & Maintained:</p>
+            <p className="font-bold text-white">10+ Production Apps Shipped & Maintained:</p>
             <p>• Samaaro Organizer App (Events platform)</p>
             <p>• Samaaro Attendee App (White-label event apps)</p>
             <p>• Namma Wallet (Open Source Crypto Wallet)</p>

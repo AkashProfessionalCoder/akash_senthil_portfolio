@@ -147,7 +147,7 @@ export class StaticPortfolioDataSource implements PortfolioDataSource {
         },
         {
           id: 'journey-2',
-          year: 'July-2024 - Present',
+          year: 'July-2024 - Jul-2026',
           title: 'Product Engineer',
           company: 'Samaaro',
           location: 'Bengaluru, India',
@@ -160,6 +160,19 @@ export class StaticPortfolioDataSource implements PortfolioDataSource {
             'Standardized repository workflows and developer guidelines.',
           ],
           tags: ['White-label Architecture', 'CI/CD Pipelines', 'App Store Releases', 'Shorebird OTA'],
+        },
+        {
+          id: 'journey-3',
+          year: 'Aug-2026 - Present',
+          title: 'Software Engineer',
+          company: '9x Technology L.L.C',
+          location: 'Hyderabad, Telangana, India',
+          // TODO (Akash): expand with real specifics once you have them - kept
+          // generic deliberately so nothing here is a fabricated achievement.
+          workDone: [
+            'Contributing to mobile application development as part of the engineering team.',
+          ],
+          tags: ['Mobile Applications', 'Mobile Application Development'],
         },
       ],
       skills: [
