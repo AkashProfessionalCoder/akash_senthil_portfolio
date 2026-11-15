@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { X, Terminal, CornerDownLeft, Trash2 } from 'lucide-react'
 import { useUIStore } from '@app/store/uiStore'
+import { appConfig } from '@app/config/appConfig'
 import { motion as m, AnimatePresence } from 'framer-motion'
 
 interface LogEntry {
@@ -64,6 +65,9 @@ export const TerminalModal: React.FC = () => {
             <p><span className="text-accent-blue font-bold">shipped</span>     - List of production applications shipped</p>
             <p><span className="text-accent-blue font-bold">focus</span>       - Architectural and engineering focus areas</p>
             <p><span className="text-accent-blue font-bold">currently</span>   - What I am building right now</p>
+            <p><span className="text-accent-blue font-bold">skills</span>      - Core technical skill set</p>
+            <p><span className="text-accent-blue font-bold">hire --me</span>  - Why you should hire me</p>
+            <p><span className="text-accent-blue font-bold">resume</span>      - Download/open my resume</p>
             <p><span className="text-accent-blue font-bold">clear</span>       - Wipe the screen logs</p>
             <p><span className="text-accent-blue font-bold">help</span>        - Display this menu</p>
           </div>
@@ -118,6 +122,37 @@ export const TerminalModal: React.FC = () => {
         response = (
           <div className="text-slate-300">
             <p>Building high-performance ecosystems and speaking at Namma Flutter events. 🚀</p>
+          </div>
+        )
+        break
+      case 'skills':
+        response = (
+          <div className="space-y-1 text-slate-300">
+            <p className="font-bold text-white">Core Skills:</p>
+            <p>• Flutter, Dart, Android, iOS</p>
+            <p>• BLoC, Riverpod, GetX state management</p>
+            <p>• Clean Architecture &amp; Feature-First design</p>
+            <p>• CI/CD: GitHub Actions, Fastlane, Shorebird OTA</p>
+          </div>
+        )
+        break
+      case 'hire --me':
+        response = (
+          <div className="space-y-1.5 text-slate-300">
+            <p className="text-accent-emerald font-bold">✓ Open to new opportunities</p>
+            <p>Scroll to the Contact section, or type <span className="text-accent-blue font-bold">resume</span> to download my CV.</p>
+          </div>
+        )
+        break
+      case 'resume':
+        response = (
+          <div className="text-slate-300">
+            <p>
+              Opening resume...{' '}
+              <a href={appConfig.resumeUrl} download className="text-accent-blue underline hover:text-accent-purple">
+                click here if the download doesn't start
+              </a>
+            </p>
           </div>
         )
         break
