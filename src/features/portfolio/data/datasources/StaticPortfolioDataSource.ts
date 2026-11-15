@@ -10,11 +10,12 @@ export class StaticPortfolioDataSource implements PortfolioDataSource {
       hero: {
         name: 'Akash Senthil',
         role: 'Mobile Engineer',
-        tagline: 'Building production-grade mobile experiences from architecture → deployment → scale.',
+        roles: ['Mobile Engineer', 'Flutter Engineer', 'CI/CD Automator', 'Community Builder'],
+        tagline: 'I ship Flutter apps that scale — 10+ live on the App Store and Play Store.',
         skillsHighlight: ['Flutter', 'Mobile Architecture', 'CI/CD', 'Performance Engineering'],
         stats: [
           { label: 'Experience', value: '3.8+ Years' },
-          { label: 'Production Apps Shipped', value: '7+' },
+          { label: 'Production Apps Shipped', value: '10+' },
           { label: 'Contributions', value: 'Open Source' },
           { label: 'Community', value: 'Public Speaker' },
         ],
@@ -22,7 +23,7 @@ export class StaticPortfolioDataSource implements PortfolioDataSource {
       impactStats: [
         {
           id: 'stat-1',
-          value: '7+',
+          value: '10+',
           label: 'Production Apps',
           subtitle: 'Built, Released, and Maintained across iOS & Android App Stores.',
         },

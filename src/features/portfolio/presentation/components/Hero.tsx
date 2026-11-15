@@ -3,11 +3,28 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Download } from 'lucide-react'
 import { Button } from '@shared/components/buttons/Button'
 import { appConfig } from '@app/config/appConfig'
+import { useCountUp } from '@core/hooks/useCountUp'
 import type { PortfolioData } from '../../domain/entities/portfolioEntities'
 import profileImg from '../../../../assets/akash_profile.webp'
+import { RotatingRole } from './RotatingRole'
 
 interface HeroProps {
   data: PortfolioData['hero'];
+}
+
+// Its own component (rather than inline in the .map() below) so useCountUp
+// - a hook - sits at this component's own top level instead of inside a
+// parent's callback, keeping it rules-of-hooks-safe.
+const HeroStat: React.FC<{ stat: { label: string; value: string } }> = ({ stat }) => {
+  const { ref, display } = useCountUp(stat.value)
+  return (
+    <div className="space-y-1">
+      <div ref={ref as React.RefObject<HTMLDivElement>} className="text-xl font-bold font-display text-white">
+        {display}
+      </div>
+      <div className="text-xs text-text-dim font-mono">{stat.label}</div>
+    </div>
+  )
 }
 
 export const Hero: React.FC<HeroProps> = ({ data }) => {
@@ -165,10 +182,10 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
 
           <motion.div variants={itemVariants}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white">
-              Hey, I'm <span className="text-gradient-blue-purple font-display">{data.name}</span> 👋
+              <span className="whitespace-nowrap">Hey, I'm <span className="text-gradient-blue-purple font-display">{data.name}</span> 👋</span>
             </h1>
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-200 mt-2 font-display">
-              {data.role}
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-200 mt-2 font-display min-h-[1.2em]">
+              <RotatingRole roles={data.roles?.length ? data.roles : [data.role]} />
             </h2>
           </motion.div>
 
@@ -218,10 +235,7 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
             className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-border-subtle/50"
           >
             {data.stats.map((stat, i) => (
-              <div key={i} className="space-y-1">
-                <div className="text-xl font-bold font-display text-white">{stat.value}</div>
-                <div className="text-xs text-text-dim font-mono">{stat.label}</div>
-              </div>
+              <HeroStat key={i} stat={stat} />
             ))}
           </motion.div>
         </motion.div>
