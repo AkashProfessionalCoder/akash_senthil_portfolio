@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, FileText, Code } from 'lucide-react'
 import { useUIStore } from '@app/store/uiStore'
 import { appConfig } from '@app/config/appConfig'
+import { ScrollProgressBar } from '@shared/components/common/ScrollProgressBar'
 
 export const Navbar: React.FC = () => {
   const activeSection = useUIStore((state) => state.activeSection)
@@ -105,6 +106,8 @@ export const Navbar: React.FC = () => {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+
+        <ScrollProgressBar />
       </header>
 
       {/* Mobile Drawer Menu */}

@@ -10,11 +10,12 @@ export class StaticPortfolioDataSource implements PortfolioDataSource {
       hero: {
         name: 'Akash Senthil',
         role: 'Mobile Engineer',
-        tagline: 'Building production-grade mobile experiences from architecture → deployment → scale.',
+        roles: ['Mobile Engineer', 'Flutter Engineer', 'CI/CD Automator', 'Community Builder'],
+        tagline: 'I ship Flutter apps that scale — 10+ live on the App Store and Play Store.',
         skillsHighlight: ['Flutter', 'Mobile Architecture', 'CI/CD', 'Performance Engineering'],
         stats: [
           { label: 'Experience', value: '3.8+ Years' },
-          { label: 'Production Apps Shipped', value: '7+' },
+          { label: 'Production Apps Shipped', value: '10+' },
           { label: 'Contributions', value: 'Open Source' },
           { label: 'Community', value: 'Public Speaker' },
         ],
@@ -22,7 +23,7 @@ export class StaticPortfolioDataSource implements PortfolioDataSource {
       impactStats: [
         {
           id: 'stat-1',
-          value: '7+',
+          value: '10+',
           label: 'Production Apps',
           subtitle: 'Built, Released, and Maintained across iOS & Android App Stores.',
         },
@@ -146,7 +147,7 @@ export class StaticPortfolioDataSource implements PortfolioDataSource {
         },
         {
           id: 'journey-2',
-          year: 'July-2024 - Present',
+          year: 'July-2024 - Jul-2026',
           title: 'Product Engineer',
           company: 'Samaaro',
           location: 'Bengaluru, India',
@@ -159,6 +160,19 @@ export class StaticPortfolioDataSource implements PortfolioDataSource {
             'Standardized repository workflows and developer guidelines.',
           ],
           tags: ['White-label Architecture', 'CI/CD Pipelines', 'App Store Releases', 'Shorebird OTA'],
+        },
+        {
+          id: 'journey-3',
+          year: 'Aug-2026 - Present',
+          title: 'Software Engineer',
+          company: '9x Technology L.L.C',
+          location: 'Hyderabad, Telangana, India',
+          // TODO (Akash): expand with real specifics once you have them - kept
+          // generic deliberately so nothing here is a fabricated achievement.
+          workDone: [
+            'Contributing to mobile application development as part of the engineering team.',
+          ],
+          tags: ['Mobile Applications', 'Mobile Application Development'],
         },
       ],
       skills: [
