@@ -76,6 +76,7 @@ export interface PortfolioData {
   hero: {
     name: string;
     role: string;
+    roles?: string[];
     tagline: string;
     skillsHighlight: string[];
     stats: { label: string; value: string }[];

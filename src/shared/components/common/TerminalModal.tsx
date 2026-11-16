@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { X, Terminal, CornerDownLeft, Trash2 } from 'lucide-react'
 import { useUIStore } from '@app/store/uiStore'
+import { appConfig } from '@app/config/appConfig'
 import { motion as m, AnimatePresence } from 'framer-motion'
 
 interface LogEntry {
@@ -64,6 +65,9 @@ export const TerminalModal: React.FC = () => {
             <p><span className="text-accent-blue font-bold">shipped</span>     - List of production applications shipped</p>
             <p><span className="text-accent-blue font-bold">focus</span>       - Architectural and engineering focus areas</p>
             <p><span className="text-accent-blue font-bold">currently</span>   - What I am building right now</p>
+            <p><span className="text-accent-blue font-bold">skills</span>      - Core technical skill set</p>
+            <p><span className="text-accent-blue font-bold">hire --me</span>  - Why you should hire me</p>
+            <p><span className="text-accent-blue font-bold">resume</span>      - Download/open my resume</p>
             <p><span className="text-accent-blue font-bold">clear</span>       - Wipe the screen logs</p>
             <p><span className="text-accent-blue font-bold">help</span>        - Display this menu</p>
           </div>
@@ -83,8 +87,9 @@ export const TerminalModal: React.FC = () => {
       case 'experience':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="font-bold text-white">3.5+ Years Mobile Engineering Experience</p>
-            <p>• Lead Mobile Developer at Samaaro (2024 - Present)</p>
+            <p className="font-bold text-white">3.8+ Years Mobile Engineering Experience</p>
+            <p>• Software Engineer at 9x Technology L.L.C (2026 - Present)</p>
+            <p>• Product Engineer at Samaaro (2024 - 2026)</p>
             <p>• Mobile Engineer at WHY Global Services (2022 - 2024)</p>
             <p>• Specialized in Flutter, Dart, Native integrations, and automation scripting.</p>
           </div>
@@ -93,7 +98,7 @@ export const TerminalModal: React.FC = () => {
       case 'shipped':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="font-bold text-white">7+ Production Apps Shipped & Maintained:</p>
+            <p className="font-bold text-white">10+ Production Apps Shipped & Maintained:</p>
             <p>• Samaaro Organizer App (Events platform)</p>
             <p>• Samaaro Attendee App (White-label event apps)</p>
             <p>• Namma Wallet (Open Source Crypto Wallet)</p>
@@ -117,6 +122,37 @@ export const TerminalModal: React.FC = () => {
         response = (
           <div className="text-slate-300">
             <p>Building high-performance ecosystems and speaking at Namma Flutter events. 🚀</p>
+          </div>
+        )
+        break
+      case 'skills':
+        response = (
+          <div className="space-y-1 text-slate-300">
+            <p className="font-bold text-white">Core Skills:</p>
+            <p>• Flutter, Dart, Android, iOS</p>
+            <p>• BLoC, Riverpod, GetX state management</p>
+            <p>• Clean Architecture &amp; Feature-First design</p>
+            <p>• CI/CD: GitHub Actions, Fastlane, Shorebird OTA</p>
+          </div>
+        )
+        break
+      case 'hire --me':
+        response = (
+          <div className="space-y-1.5 text-slate-300">
+            <p className="text-accent-emerald font-bold">✓ Open to new opportunities</p>
+            <p>Scroll to the Contact section, or type <span className="text-accent-blue font-bold">resume</span> to download my CV.</p>
+          </div>
+        )
+        break
+      case 'resume':
+        response = (
+          <div className="text-slate-300">
+            <p>
+              Opening resume...{' '}
+              <a href={appConfig.resumeUrl} download className="text-accent-blue underline hover:text-accent-purple">
+                click here if the download doesn't start
+              </a>
+            </p>
           </div>
         )
         break

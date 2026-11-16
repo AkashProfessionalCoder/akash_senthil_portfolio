@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, FileText, Code } from 'lucide-react'
 import { useUIStore } from '@app/store/uiStore'
 import { appConfig } from '@app/config/appConfig'
+import { ScrollProgressBar } from '@shared/components/common/ScrollProgressBar'
 
 export const Navbar: React.FC = () => {
   const activeSection = useUIStore((state) => state.activeSection)
@@ -39,7 +40,7 @@ export const Navbar: React.FC = () => {
       <header className="sticky top-0 w-full z-40 glass-panel border-b border-border-subtle/50 px-6 py-4 flex justify-between items-center transition-all duration-300">
         {/* Logo */}
         <a href="#hero" onClick={(e) => handleScroll(e, '#hero')} className="flex items-center space-x-2 font-display font-bold text-2xl text-gradient-blue-purple tracking-tight">
-          <span>AkashSenthil.dev</span>
+          <span>AkashSenthil.tech</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -105,6 +106,8 @@ export const Navbar: React.FC = () => {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+
+        <ScrollProgressBar />
       </header>
 
       {/* Mobile Drawer Menu */}

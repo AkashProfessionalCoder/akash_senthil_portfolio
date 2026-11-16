@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion, useMotionValue, useMotionTemplate } from 'framer-motion'
 import { cn } from '@core/utils/cn'
+import { useHasFinePointer } from '@core/hooks/usePointerCapability'
 
 interface GlassCardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
@@ -16,6 +17,11 @@ export const GlassCard: React.FC<GlassCardProps> = ({
   spotlight = true,
   ...props
 }) => {
+  // The glow already relied on onMouseMove simply never firing on touch
+  // devices; this makes that explicit instead of incidental.
+  const hasFinePointer = useHasFinePointer()
+  const effectiveSpotlight = spotlight && hasFinePointer
+
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
@@ -49,7 +55,7 @@ export const GlassCard: React.FC<GlassCardProps> = ({
 
   return (
     <div
-      onMouseMove={spotlight ? handleMouseMove : undefined}
+      onMouseMove={effectiveSpotlight ? handleMouseMove : undefined}
       className={cn(
         'group relative overflow-hidden rounded-xl glass-panel glass-panel-hover p-6 border border-border-subtle bg-bg-card',
         glowStyles[glowColor],
@@ -58,7 +64,7 @@ export const GlassCard: React.FC<GlassCardProps> = ({
       {...props}
     >
       {/* Interactive spotlight overlay */}
-      {spotlight && (
+      {effectiveSpotlight && (
         <motion.div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0"
           style={{ background: backgroundTemplate }}

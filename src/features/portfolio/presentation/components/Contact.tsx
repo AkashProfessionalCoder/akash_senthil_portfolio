@@ -181,7 +181,7 @@ export const Contact: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-5 flex flex-col h-full justify-between">
                   <div className="space-y-4">
                     <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest block">
-                      // SEND SECURE ENCRYPTED MESSAGE
+                      SEND ME A MESSAGE
                     </span>
 
                     {/* Input name */}
@@ -244,13 +244,13 @@ export const Contact: React.FC = () => {
                       icon={<Send size={14} />}
                       id="submit-contact-form"
                     >
-                      Transmit Message
+                      Send Message
                     </Button>
-                    
+
                     {isSubmitted && (
                       <div className="flex items-center space-x-2 text-accent-emerald text-xs font-mono animate-fade-in">
                         <CheckCircle size={14} />
-                        <span>Transmission successful!</span>
+                        <span>Message sent!</span>
                       </div>
                     )}
                   </div>
