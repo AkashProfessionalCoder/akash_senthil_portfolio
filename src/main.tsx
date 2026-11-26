@@ -1,5 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import '@fontsource-variable/inter'
 import '@fontsource-variable/outfit'
 import '@fontsource-variable/fira-code'
@@ -10,6 +12,8 @@ const container = document.getElementById('root')!
 const app = (
   <StrictMode>
     <App />
+    <Analytics />
+    <SpeedInsights />
   </StrictMode>
 )
 
